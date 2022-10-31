@@ -3,7 +3,7 @@ version: "3"
 services:
   develop:
     image: botenv:latest
-    container_name: z-bot
+    container_name: ${BOT_NAME}
     stdin_open: true
     tty: true
     volumes:

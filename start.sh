@@ -2,7 +2,7 @@
 
 # 啟動腳本
 
-BOT_NAME=z-bot
+export $(cat .env)
 
 # 更新code到最新
 docker exec -it $BOT_NAME /bin/bash -c "GIT_SSH_COMMAND=\"ssh -o StrictHostKeyChecking=no\" git pull origin HEAD"
