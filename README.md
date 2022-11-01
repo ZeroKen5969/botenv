@@ -22,8 +22,13 @@ chmod +x *
 
 # 啟動機器人
 
++ 會重新執行build code
 ```bash
 ./start.sh
+```
++ 不會重新執行build code, 給github action用的
+```bash
+./hotstart.sh
 ```
 
 # 停止機器人

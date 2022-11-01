@@ -4,6 +4,8 @@
 
 export $(cat .env)
 
+SKIP_BUILD=$1
+
 # 更新code到最新
 docker exec -it $BOT_NAME /bin/bash -c "GIT_SSH_COMMAND=\"ssh -o StrictHostKeyChecking=no\" git pull origin HEAD"
 
@@ -11,8 +13,10 @@ docker exec -it $BOT_NAME /bin/bash -c "GIT_SSH_COMMAND=\"ssh -o StrictHostKeyCh
 ./hotstop.sh
 
 # build code
-docker exec -it $BOT_NAME /bin/bash -c "npm i"
-docker exec -it $BOT_NAME /bin/bash -c "npm run build"
+if [ "$SKIP_BUILD" != true ]; then
+    docker exec -it $BOT_NAME /bin/bash -c "npm i"
+    docker exec -it $BOT_NAME /bin/bash -c "npm run build"
+fi
 docker exec -it $BOT_NAME /bin/bash -c "sed -i -e 's/\r$//' run.sh"
 docker exec -it $BOT_NAME /bin/bash -c "chmod +x *.sh"
 
