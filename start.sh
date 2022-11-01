@@ -8,8 +8,7 @@ SKIP_BUILD=$1
 
 # 更新code到最新
 docker exec $BOT_NAME /bin/bash -c "
-GIT_SSH_COMMAND=\"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\";
-git fetch --all;
+GIT_SSH_COMMAND=\"ssh -o StrictHostKeyChecking=no\" git fetch --all;
 git reset --hard origin/master;
 git pull origin master;"
 
