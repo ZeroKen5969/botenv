@@ -20,7 +20,7 @@ docker exec $BOT_NAME /bin/bash -c "npm i"
 
 # build code
 if [ "$SKIP_BUILD" != true ]; then
-    rm -rf ./built
+    docker exec $BOT_NAME /bin/bash -c "rm -rf ./built"
     docker exec $BOT_NAME /bin/bash -c "npm run build"
 fi
 docker exec $BOT_NAME /bin/bash -c "sed -i -e 's/\r$//' run.sh"
