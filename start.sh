@@ -27,4 +27,4 @@ docker exec $BOT_NAME /bin/bash -c "sed -i -e 's/\r$//' run.sh"
 docker exec $BOT_NAME /bin/bash -c "chmod +x *.sh"
 
 # 啟動服務
-docker exec -d $BOT_NAME /bin/bash -c "./run.sh > /proc/1/fd/1"
+docker exec -d $BOT_NAME /bin/bash -c "./run.sh &> /proc/1/fd/1"
