@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get install -y curl && \
     apt-get install -y git && \
     apt-get install -y libfontconfig && \
+    apt install -y procps && \
     # 建立暫存資料夾
     mkdir pkg && cd pkg && \
     # 安裝node.js
