@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/runtime-deps:8.0
 
 WORKDIR /bot
 
-ENV NODE_VERSION=17.9.1
+ENV NODE_VERSION=18.20.8
 ENV JAVA_HOME=/usr/java/jdk-13.0.2
 ENV PATH=${PATH}:${JAVA_HOME}/bin:/usr/node/v17.9.1/bin
 
