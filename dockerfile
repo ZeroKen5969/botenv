@@ -4,7 +4,7 @@ WORKDIR /bot
 
 ENV NODE_VERSION=18.20.8
 ENV JAVA_HOME=/usr/java/jdk-13.0.2
-ENV PATH=${PATH}:${JAVA_HOME}/bin:/usr/node/${NODE_VERSION}/bin
+ENV PATH=${PATH}:${JAVA_HOME}/bin:/usr/node/v${NODE_VERSION}/bin
 
 RUN apt-get update && \
     apt-get install -y curl && \
