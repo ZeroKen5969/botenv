@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/runtime-deps:8.0
 WORKDIR /bot
 
 ENV NODE_VERSION=18.20.8
-ENV JAVA_HOME=/usr/java/jdk-13.0.2
+ENV JAVA_HOME=/usr/java/jdk-24.0.1
 ENV PATH=${PATH}:${JAVA_HOME}/bin:/usr/node/v${NODE_VERSION}/bin
 
 RUN apt-get update && \
@@ -20,8 +20,8 @@ RUN apt-get update && \
     /bin/mv -f node-v${NODE_VERSION}-linux-x64/ /usr/node/v${NODE_VERSION} && \
     # 安裝java
     # mkdir /usr/java && \
-    # curl -LO https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_linux-x64_bin.tar.gz && \
-    # tar xvf ./openjdk-13.0.2_linux-x64_bin.tar.gz && \
-    # /bin/mv -f jdk-13.0.2/ /usr/java/jdk-13.0.2 && \ 
+    # curl -LO https://download.oracle.com/java/24/latest/jdk-24_linux-x64_bin.tar.gz && \
+    # tar xvf ./jdk-24_linux-x64_bin.tar.gz && \
+    # /bin/mv -f jdk-24.0.1/ /usr/java/jdk-24.0.1 && \ 
     # 清空暫存資料夾
     cd .. && rm -rf pkg
