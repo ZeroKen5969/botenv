@@ -19,9 +19,9 @@ RUN apt-get update && \
     tar xvf ./node-v${NODE_VERSION}-linux-x64.tar.gz && \
     /bin/mv -f node-v${NODE_VERSION}-linux-x64/ /usr/node/v${NODE_VERSION} && \
     # 安裝java
-    # mkdir /usr/java && \
-    # curl -LO https://download.oracle.com/java/24/latest/jdk-24_linux-x64_bin.tar.gz && \
-    # tar xvf ./jdk-24_linux-x64_bin.tar.gz && \
-    # /bin/mv -f jdk-24.0.1/ /usr/java/jdk-24.0.1 && \ 
+    mkdir /usr/java && \
+    curl -LO https://download.oracle.com/java/24/latest/jdk-24_linux-x64_bin.tar.gz && \
+    tar xvf ./jdk-24_linux-x64_bin.tar.gz && \
+    /bin/mv -f jdk-24.0.1/ /usr/java/jdk-24.0.1 && \ 
     # 清空暫存資料夾
     cd .. && rm -rf pkg
